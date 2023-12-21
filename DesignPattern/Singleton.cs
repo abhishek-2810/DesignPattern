@@ -1,8 +1,11 @@
 ﻿namespace DesignPattern
 {
-    internal class Singleton
+    // Sealed Class cause this class should not be inherited by any nested class as well else it will result in multiple instance creation of Singleton class
+    internal sealed class Singleton
     {
         private static int counter = 0;
+
+        // private variable to store singleton instance of class
         private static Singleton? instance = null;
 
         private Singleton()
