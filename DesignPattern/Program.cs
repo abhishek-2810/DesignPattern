@@ -1,3 +1,4 @@
+using DesignPattern.SingletonPattern;
 ﻿namespace DesignPattern
 {
     internal class Program

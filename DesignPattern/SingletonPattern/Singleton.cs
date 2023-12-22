@@ -1,4 +1,4 @@
-﻿namespace DesignPattern
+﻿namespace DesignPattern.SingletonPattern
 {
     // Sealed Class cause this class should not be inherited by any nested class as well else it will result in multiple instance creation of Singleton class
     internal sealed class Singleton
@@ -41,3 +41,5 @@
         public void PrintMessage(string message) => Console.WriteLine(message);
     }
 }
+
+// Note: If we delay the instance creation of a class then it is referred as lazy initialization. As in Singleton class we are using GetInstance property to create instance and if we do not call GetInstance no instance will be created thus it is lazy loading.
