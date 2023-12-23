@@ -1,3 +1,5 @@
+using DesignPattern.FactoryPattern.SimpleFactory.Enum;
+using DesignPattern.FactoryPattern.SimpleFactory;
 using DesignPattern.SingletonPattern;
 ﻿namespace DesignPattern
 {
@@ -7,14 +9,20 @@ using DesignPattern.SingletonPattern;
         {
             // Singleton
             // SingleThread Execution
-            //SingletonObjectCallFromClassA();
-            //SingletonObjectCallFromClassB();
+            SingletonObjectCallFromClassA();
+            SingletonObjectCallFromClassB();
 
             // ParallelThread Execution
             Parallel.Invoke(
                 SingletonObjectCallFromClassA,
                 SingletonObjectCallFromClassB
             );
+
+            // Simple Factory
+            var simpleFactory = new SimpleFactory();
+            var ceilingFan = simpleFactory.CreateFan(Fan.CeilingFan);
+            ceilingFan.PowerOn();
+            ceilingFan.PowerOff();
         }
 
         private static void SingletonObjectCallFromClassB()
